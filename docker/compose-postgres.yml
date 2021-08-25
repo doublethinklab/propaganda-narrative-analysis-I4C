@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+
+  pna-postgres:
+    image: doublethinklab/pna-postgres:latest
+    stop_signal: SIGTERM
+    volumes:
+      - dtl-pna:/var/lib/postgresql/data
+    ports:
+      - "5430:5432"
+    restart: always
+    environment:
+      - POSTGRES_USER=dtl_postgres
+      - POSTGRES_PASSWORD=p@ssw0rd!
+      - POSTGRES_DB=pna
+
+volumes:
+  dtl-pna:
+    external: true

@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+
+  dtl-pna:
+    image: doublethinklab/pna-dev:latest
+    environment:
+      - PGSQL_HOST=dtl-pna-postgres
+      - PGSQL_PORT=5432
+      - PGSQL_USERNAME=dtl_postgres
+      - PGSQL_PASSWORD=p@ssw0rd!
+      - PGSQL_DB=pna
+      - DEVELOPMENT=1
+    stop_signal: SIGKILL
+    ports:
+      - "5000:5000"
+    volumes:
+      - ${PWD}:/pna
+    working_dir: /pna
+    depends_on:
+      - dtl-pna-postgres
+
+  dtl-pna-postgres:
+    image: doublethinklab/pna-postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=dtl_postgres
+      - POSTGRES_PASSWORD=p@ssw0rd!
+      - POSTGRES_DB=pna
