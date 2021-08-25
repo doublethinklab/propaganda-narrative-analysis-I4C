@@ -2,7 +2,11 @@
 
 ## Overview
 
-We focus on the 
+We analyze tweets from the PRC embassy in the Phillipines between 
+1st January 2020 to 30th June 2021 for propaganda narratives.
+
+We offer some high level computational perspectives on the data to try and 
+identify what is being talked about and how it is being talked about.
 
 ## Getting Started
 
