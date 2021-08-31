@@ -14,6 +14,7 @@ To run the app:
 
 ```
 ./build_dev.sh
+./build_prod.sh
 ./build_postgres.sh
 docker volume create dtl-pna
 # if you are on linux or max

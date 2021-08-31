@@ -1,7 +1,7 @@
 #!/bin/bash
 
 docker build \
-    $1 \
+    --no-cache \
     -f docker/pna-dev.Dockerfile \
     -t doublethinklab/pna-dev:latest \
     .

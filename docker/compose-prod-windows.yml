@@ -3,7 +3,7 @@ version: "3"
 services:
 
   dtl-pna:
-    image: doublethinklab/pna-dev:latest
+    image: doublethinklab/pna:latest
     environment:
       - PGSQL_HOST=dtl-pna-postgres
       - PGSQL_PORT=5432
@@ -14,8 +14,6 @@ services:
     stop_signal: SIGKILL
     ports:
       - "5000:5000"
-    volumes:
-      - %cd%:/pna
     working_dir: /pna
     depends_on:
       - dtl-pna-postgres
